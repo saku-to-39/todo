@@ -12,7 +12,7 @@
   <heade>
   <nav class="navbar navbar-expand navbar-dark bg-dark">
     <ul class="navbar-nav text-center">
-      <li class="nav-item"><a href="" class="nav-link" active>todolist</a></li>
+      <li class="nav-item"><a href="index.php" class="nav-link" active>todolist</a></li>
       <li class="nav-item"><a href="" class="nav-link">新規登録</a></li>
       <li class="nav-item"><a href="" class="nav-link">ログイン</a></li>  
     </ul>
