@@ -21,14 +21,16 @@
    * 1.PDOインスタンスを生成する
    * 1.クエリを流す
    * foreachで表示させる
-   */
+  */
+ $id = filter_input(INPUT_GET, 'id');
+
  $dsn = 'mysql:dbname=todo;host=localhost:8889';
  $pdo = new PDO($dsn, "root","root");
- $sql = "select * from posts";
- $stmt = $pdo->query($sql);
-
- $posts = $stmt->fetchAll();
-
+ $sql = "select * from posts where id = :id";
+ $stmt = $pdo->prepare($sql);
+ $stmt->bindValue(":id", $id, PDO::PARAM_INT);
+ $stmt->execute();
+ $post = $stmt->fetch();
  /*echo('<pre>');
  var_dump($posts);
  echo('</pre>');*/
@@ -54,17 +56,13 @@
     <tr>
       <th class="text-center">Id</th>
       <th class="text-center">Title</th>
-      <th class="text-center">Edit</th>
     </tr>
-    <?php foreach($posts as $post) :?>
     <tr>
       <td class="text-center"><?php echo $post['id'];?></td>
       <td class="text-center"><?php echo $post['title'];?></td>
-      <td class="text-center"><a href="edit.php?id=<?php  echo $post['id'];?>">編集する</a></td>
     </tr>
-    <?php endforeach?>
   </table>
 
-  <a href="create.php">新規作成画面</a>
+  <a href="index.php">一覧画面</a>
 </body>
 </html>
