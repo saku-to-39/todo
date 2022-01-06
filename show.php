@@ -56,13 +56,15 @@
     <tr>
       <th class="text-center">Id</th>
       <th class="text-center">Title</th>
+      <th class="text-center">Edit</th>
     </tr>
     <tr>
       <td class="text-center"><?php echo $post['id'];?></td>
       <td class="text-center"><?php echo $post['title'];?></td>
+      <td class="text-center"><a href="edit.php?id=<?php  echo $post['id'];?>">編集する</a></td>
     </tr>
   </table>
-
   <a href="index.php">一覧画面</a>
+  <button><a href="destroy.php?id=<?php echo $post['id'];?>">削除する</a></button>
 </body>
 </html>
