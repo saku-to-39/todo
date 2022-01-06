@@ -54,13 +54,13 @@
     <tr>
       <th class="text-center">Id</th>
       <th class="text-center">Title</th>
-      <th class="text-center">Edit</th>
+      <th class="text-center">Show</th>
     </tr>
     <?php foreach($posts as $post) :?>
     <tr>
       <td class="text-center"><?php echo $post['id'];?></td>
       <td class="text-center"><?php echo $post['title'];?></td>
-      <td class="text-center"><a href="edit.php?id=<?php  echo $post['id'];?>">編集する</a></td>
+      <td class="text-center"><a href="show.php?id=<?php  echo $post['id'];?>">編集する</a></td>
     </tr>
     <?php endforeach?>
   </table>
