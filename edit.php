@@ -54,6 +54,7 @@
   <form action="update.php" method='post'>
     <div class="form-group">
       タイトル
+      <input type="hidden" name='id' value="<?php echo $post['id'];?>">
       <input type="text" name="title"class="form-control" value="<?php echo $post['title'];?>">
       <button type="submit" class="btn btn-primary">更新</button>
     </div>
